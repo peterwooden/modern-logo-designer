@@ -4,14 +4,6 @@
 
 @import url('https://fonts.googleapis.com/css2?family=Raleway:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&family=Nunito+Sans&family=Roboto&family=Merriweather+Sans&family=Rubik&family=Quicksand&family=Cabin&family=Open+Sans&family=Lato&family=Montserrat&family=Source+Sans+Pro&family=Roboto+Condensed&family=Poppins&family=Ubuntu&family=Oxygen&family=Josefin+Sans&family=Yantramanav:wght@100;300;400;500;700;900&display=swap');
 
-
-input[type="range"]::range-track {
-}
-
-input[type="range"]::range-thumb {
-}
-
-
 input[type=range] {
   -webkit-appearance: none; /* Hides the slider so that custom slider can be made */
   width: 100%; /* Specific width is required for Firefox. */
