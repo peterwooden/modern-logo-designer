@@ -1,37 +1,35 @@
 import { useState } from 'react';
-import { SketchPicker } from 'react-color'
-
-const FONT_WEIGHTS = ['normal', 'bold', 'lighter', 'bolder', 100, 200, 300, 400, 500, 600, 700, 800,900];
+import Editor from './Editor';
+import { Intro } from './Intro';
 
 function App() {
-  const [text, setText] = useState('Modern Logo');
-  const [color, setColor] = useState('#000');
-  const [fontWeight, setFontWeight] = useState('bolder');
+    const [showIntro, setShowIntro] = useState(true);
+    return (
+        <div className="w-screen h-screen p-4 bg-gray-50 flex flex-col justify-between">
+            <div>
+                <header className="mb-6">
+                    <h1 className="text-3xl font-light text-center">
+                        Modern Logo Designer
+                    </h1>
+                </header>
+                {showIntro ? (
+                    <Intro nextCallback={() => setShowIntro(false)} />
+                ) : (
+                    <Editor />
+                )}
+            </div>
 
-  return (
-    <div className="">
-      <div className="">
-        <input 
-          type="text" 
-          value={text} 
-          onChange={(e) => setText(e.target.value)}
-          style={{
-            color,
-            lineHeight: 'unset',
-            fontWeight
-          }}
-          className="shadow-lg p-5 text-3xl rounded-2xl text-center outline-none"
-        />
-
-      </div>
-
-      <select value={fontWeight} onChange={e => setFontWeight(e.target.value)}>
-        {FONT_WEIGHTS.map(weight => <option value={weight}>{weight}</option>)}
-      </select>
-
-      <SketchPicker onChange={color => setColor(color.hex)} color={color}/>
-    </div>
-  );
+            <footer className="text-sm text-gray-500">
+                Fork me on{' '}
+                <a
+                    href="https://github.com/peterwooden/modern-logo-designer"
+                    className="font-semibold"
+                >
+                    Github
+                </a>
+            </footer>
+        </div>
+    );
 }
 
 export default App;
